@@ -1,8 +1,11 @@
 #--------------------------------------------------------------------------------
+# Author: Aaron Toney
+# Description: Simple example of using Scikit-learn's decision trees. Using BMI
+#              data to simulate population sampling. 
+# 
 # BMI Table if you are over 35 is availabe fromt he NIH. 
 # (www.nhlbi.nih.gov/health/educational/lose_wt/BMI/bmi_tbl.htm)
-#--------------------------------------------------------------------------------
-#
+##
 # Given BMI table
 #
 #        BMI | 19 20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35
@@ -60,6 +63,13 @@ while( looping ):
 
      prediction = clf.predict([[weight,height]])
      print("It appears that you are:", prediction, "\r\n" )
+
+# Doesn't really make sence unless we have multiple labels for the same observations
+# then we can generate the probability of obseration to label mappings. 
+#
+#     prediction_prob = clf.predict_proba([[weight,height ]])
+#     print("There is a prediction probability of: ", prediction_prob, "\r\n" )
+
 
 #-------------------------------------------------------------------------------- 
 # Generate a graph visualizing the trained decesion tree. 
